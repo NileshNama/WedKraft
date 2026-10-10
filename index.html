@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WedKraft Event & Production House (@wedkraftevent) | Grand Varmala & Luxury Weddings</title>
+  <meta name="description" content="WedKraft Event & Production House (@wedkraftevent) - Grand Varmala Concepts, Special Effects, Cold Pyro Fireworks & Bespoke Wedding Production." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons & Canvas Confetti -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body class="luxury-theme">
+
+  <!-- Animated Particle & Dust Overlay Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
+  <!-- Noise Overlay Texture -->
+  <div class="grain-overlay"></div>
+
+  <!-- Side Navigation Tracker -->
+  <aside class="section-nav-tracker" id="section-tracker">
+    <div class="tracker-dot active" data-target="hero" title="Home"><span>01</span></div>
+    <div class="tracker-dot" data-target="intro" title="Experience"><span>02</span></div>
+    <div class="tracker-dot" data-target="reels-section" title="Instagram Video"><span>03</span></div>
+    <div class="tracker-dot" data-target="varmala-section" title="Varmala Concepts"><span>04</span></div>
+    <div class="tracker-dot" data-target="featured" title="Portfolios"><span>05</span></div>
+    <div class="tracker-dot" data-target="welcome" title="Production"><span>06</span></div>
+    <div class="tracker-dot" data-target="kind-words" title="Kind Words"><span>07</span></div>
+    <div class="tracker-dot" data-target="contact" title="Get in Touch"><span>08</span></div>
+    <div class="tracker-dot" data-target="instagram-section" title="Instagram Feed"><span>09</span></div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="site-header fixed-header" id="main-header">
+    <div class="header-container">
+      <nav class="nav-left">
+        <a href="#hero" class="nav-link">HOME</a>
+        <a href="#intro" class="nav-link">ABOUT</a>
+        <a href="#reels-section" class="nav-link">REELS</a>
+        <a href="#varmala-section" class="nav-link">VARMALA</a>
+      </nav>
+
+      <!-- Center Logo Monogram -->
+      <div class="brand-logo-center">
+        <div class="logo-crest">
+          <span class="crest-symbol">✦</span>
+          <span class="brand-title">WEDKRAFT</span>
+          <span class="brand-subtitle">EVENT & PRODUCTION HOUSE</span>
+        </div>
+      </div>
+
+      <nav class="nav-right">
+        <a href="#featured" class="nav-link">PORTFOLIO</a>
+        <a href="#kind-words" class="nav-link">REVIEWS</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
+        <a href="https://instagram.com/wedkraftevent" target="_blank" rel="noopener" class="nav-social-icon insta-gradient-icon" title="Follow @wedkraftevent">
+          <svg class="insta-svg-logo" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </nav>
+
+      <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer hidden" id="mobile-drawer">
+    <button class="close-drawer-btn" id="close-drawer-btn">&times;</button>
+    <div class="drawer-logo">WEDKRAFT EVENT & PRODUCTION HOUSE</div>
+    <div class="drawer-links">
+      <a href="#hero" class="drawer-link">HOME</a>
+      <a href="#intro" class="drawer-link">ABOUT US</a>
+      <a href="#reels-section" class="drawer-link">INSTAGRAM REELS</a>
+      <a href="#varmala-section" class="drawer-link">VARMALA CONCEPTS</a>
+      <a href="#featured" class="drawer-link">PORTFOLIO</a>
+      <a href="#kind-words" class="drawer-link">TESTIMONIALS</a>
+      <a href="#contact" class="drawer-link">CONTACT US</a>
+      <a href="https://instagram.com/wedkraftevent" target="_blank" class="drawer-link gold-text">
+        <svg class="insta-svg-inline" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        @wedkraftevent
+      </a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: HERO SLIDER -->
+  <section id="hero" class="section-block hero-section scroll-reveal">
+    <div class="hero-image-container">
+      <img src="/wedkraft_varmala_pyro.jpg" alt="WedKraft Event & Production House Varmala Pyro Entry" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-star">✦</span>
+        <span>WEDKRAFT EVENT & PRODUCTION HOUSE | @WEDKRAFTEVENT</span>
+        <span class="badge-star">✦</span>
+      </div>
+
+      <h1 class="hero-main-heading">
+        Grand Varmala Concepts &<br />
+        <span class="gold-shimmer">Cinematic Event Production</span>
+      </h1>
+
+      <p class="hero-subcaption">
+        Specializing in fairy-tale garland exchange entries, cold pyro fireworks, 360° rotating stages, and high-impact event production across India.
+      </p>
+
+      <div class="hero-cta-group">
+        <button id="open-planner-btn" class="btn-gold-royal">
+          <span>BOOK YOUR EVENT</span>
+          <i data-lucide="arrow-right"></i>
+        </button>
+        <a href="https://instagram.com/wedkraftevent" target="_blank" rel="noopener" class="btn-glass-outline">
+          <svg class="insta-svg-inline" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@wedkraftevent</span>
+        </a>
+      </div>
+
+      <div class="scroll-unveil-hint" id="scroll-next-trigger">
+        <span class="hint-text">UNFOLD NEXT CHAPTER</span>
+        <div class="scroll-arrow-box">
+          <i data-lucide="chevron-down" class="animated-bounce"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 2: INTRO & PHILOSOPHY -->
+  <section id="intro" class="section-block intro-section green-bg scroll-reveal">
+    <div class="section-curtain-arch"></div>
+    <div class="container text-center">
+      <div class="gold-diamond-icon">❖</div>
+      <h2 class="section-title-light">
+        Creating Cinematic Magic<br />
+        For Your Special Moments
+      </h2>
+      <p class="intro-caption gold-subtext">WedKraft Event & Production House | @wedkraftevent</p>
+      <p class="intro-description">
+        From grand Varmala entry setups featuring hydraulic pyro stages to pre-wedding galas, baby showers, sangeet concerts, and royal wedding receptions, we handle complete design, execution, and production.
+      </p>
+
+      <div class="contact-badges-row">
+        <a href="mailto:wedkraftevent@gmail.com" class="badge-contact-item">
+          <i data-lucide="mail"></i>
+          <span>wedkraftevent@gmail.com</span>
+        </a>
+        <a href="https://instagram.com/wedkraftevent" target="_blank" class="badge-contact-item">
+          <svg class="insta-svg-inline" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@wedkraftevent</span>
+        </a>
+      </div>
+      
+      <!-- Live Countdown -->
+      <div class="mini-countdown-container">
+        <span class="countdown-title">UPCOMING SEASON REVEAL COUNTDOWN</span>
+        <div class="countdown-inline">
+          <div class="time-unit"><span id="days">00</span><small>Days</small></div>
+          <span class="colon">:</span>
+          <div class="time-unit"><span id="hours">00</span><small>Hours</small></div>
+          <span class="colon">:</span>
+          <div class="time-unit"><span id="mins">00</span><small>Mins</small></div>
+          <span class="colon">:</span>
+          <div class="time-unit"><span id="secs">00</span><small>Secs</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 3: EMBEDDED INSTAGRAM REEL & CINEMATIC VIDEO SHOWCASE -->
+  <section id="reels-section" class="section-block reels-section ivory-bg scroll-reveal">
+    <div class="container text-center">
+      <span class="sub-script-header">Instagram Highlights</span>
+      <h2 class="section-heading-dark">
+        Watch Our Production In Action<br />
+        <a href="https://instagram.com/wedkraftevent" target="_blank" class="gold-link-inline">@wedkraftevent Reels</a>
+      </h2>
+      <p class="section-lead-muted">
+        Experience the energy, cold pyro sparks, and regal entry concepts produced live by WedKraft Event & Production House.
+      </p>
+
+      <div class="reels-showcase-grid">
+        
+        <!-- Live Embedded Instagram Reel Card 1 -->
+        <div class="reel-embed-card">
+          <div class="reel-badge">
+            <svg class="insta-svg-inline" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg> 
+            Featured Instagram Reel
+          </div>
+          <div class="embed-wrapper">
+            <iframe 
+              src="https://www.instagram.com/reel/C8W95l5S_7e/embed" 
+              class="instagram-iframe" 
+              frameborder="0" 
+              scrolling="no" 
+              allowtransparency="true"
+              allow="encrypted-media">
+            </iframe>
+          </div>
+          <div class="reel-card-footer">
+            <span class="reel-title">✨ Grand Varmala Pyro Entry</span>
+            <a href="https://instagram.com/wedkraftevent" target="_blank" class="reel-watch-btn">
+              Watch on Instagram &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Cinematic Video Player Card 2 -->
+        <div class="reel-video-card">
+          <div class="video-container">
+            <video 
+              id="showcase-video-1" 
+              class="custom-video-player" 
+              poster="/wedkraft_mandap_stage.jpg"
+              loop 
+              muted 
+              playsinline>
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-having-their-first-dance-42939-large.mp4" type="video/mp4" />
+            </video>
+            <button class="video-play-btn" id="play-video-1" aria-label="Play Reel Video">
+              <i data-lucide="play"></i>
+            </button>
+            <div class="video-overlay-badge">
+              <i data-lucide="video"></i> 360° Rotating Stage Production
+            </div>
+          </div>
+          <div class="reel-card-footer">
+            <span class="reel-title">🔥 360° Rotating Stage & Cold Pyros</span>
+            <a href="https://instagram.com/wedkraftevent" target="_blank" class="reel-watch-btn">
+              Follow @wedkraftevent &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Video Player Card 3 -->
+        <div class="reel-video-card">
+          <div class="video-container">
+            <video 
+              id="showcase-video-2" 
+              class="custom-video-player" 
+              poster="/wedkraft_sangeet_lighting.jpg"
+              loop 
+              muted 
+              playsinline>
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-wedding-venue-decorations-with-flowers-and-lights-42938-large.mp4" type="video/mp4" />
+            </video>
+            <button class="video-play-btn" id="play-video-2" aria-label="Play Reel Video">
+              <i data-lucide="play"></i>
+            </button>
+            <div class="video-overlay-badge">
+              <i data-lucide="sparkles"></i> Concert Stage Lighting & Lasers
+            </div>
+          </div>
+          <div class="reel-card-footer">
+            <span class="reel-title">🎶 Concert Stage & Laser Show</span>
+            <a href="https://instagram.com/wedkraftevent" target="_blank" class="reel-watch-btn">
+              Watch More Reels &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 4: SIGNATURE VARMALA & SPECIAL EFFECTS CONCEPTS -->
+  <section id="varmala-section" class="section-block varmala-section green-bg scroll-reveal">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="calligraphy-heading">Signature Varmala Concepts</h2>
+        <p class="gold-subtext">Special Effects & Stage Innovations by @wedkraftevent</p>
+      </div>
+
+      <div class="varmala-concepts-grid">
+        
+        <div class="concept-card glass-card">
+          <div class="concept-icon"><i data-lucide="flame"></i></div>
+          <h3>Cold Pyro Fireworks</h3>
+          <p>Sparkling, smokeless cold pyro fountains synchronized perfectly with the bride and groom’s garland exchange moment.</p>
+        </div>
+
+        <div class="concept-card glass-card">
+          <div class="concept-icon"><i data-lucide="rotate-cw"></i></div>
+          <h3>Hydraulic 360° Revolving Stage</h3>
+          <p>Elevated, revolving Varmala platforms allowing all guests 360-degree panoramic views of the main ceremony.</p>
+        </div>
+
+        <div class="concept-card glass-card">
+          <div class="concept-icon"><i data-lucide="sparkle"></i></div>
+          <h3>Flower Shower & Heavy Fog</h3>
+          <p>Low-lying dry ice heavy fog effects paired with automated rose petal showers for a fairy-tale cloud entry.</p>
+        </div>
+
+        <div class="concept-card glass-card">
+          <div class="concept-icon"><i data-lucide="music"></i></div>
+          <h3>Concert Stage Lighting & SFX</h3>
+          <p>Professional DMX intelligent lighting, CO2 jets, laser setups, and royal musical fanfares tailored to your theme.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 5: FEATURED PORTFOLIO WITH IMPORTED WEDKRAFT MEDIA -->
+  <section id="featured" class="section-block featured-section ivory-bg scroll-reveal">
+    <div class="container">
+      <div class="featured-header text-left">
+        <span class="sub-script-header">Event & Production Services</span>
+        <h2 class="section-heading-dark">
+          We turn grand visions into<br />
+          unforgettable realities.
+        </h2>
+      </div>
+
+      <div class="featured-grid">
+        <div class="featured-card tall-card parallax-hover">
+          <div class="card-img-wrapper">
+            <img src="/wedkraft_varmala_pyro.jpg" alt="WedKraft Varmala & Cold Pyro Stage" />
+          </div>
+          <div class="card-caption">
+            <span class="card-category">GRAND VARMALA & COLD PYROS</span>
+            <a href="#contact" class="card-link-title">BOOK CONCEPTS &rarr;</a>
+          </div>
+        </div>
+
+        <div class="right-grid-stack">
+          <div class="featured-card parallax-hover">
+            <div class="card-img-wrapper">
+              <img src="/wedkraft_mandap_stage.jpg" alt="WedKraft Royal Palace Mandap Stage" />
+            </div>
+            <div class="card-caption">
+              <span class="card-category">PALACE MANDAP & STAGE DECOR</span>
+              <a href="#contact" class="card-link-title">VIEW SETUPS &rarr;</a>
+            </div>
+          </div>
+
+          <div class="featured-card parallax-hover">
+            <div class="card-img-wrapper">
+              <img src="/wedkraft_sangeet_lighting.jpg" alt="WedKraft Sangeet Concert Stage Lighting" />
+            </div>
+            <div class="card-caption">
+              <span class="card-category">SANGEET & CONCERT LIGHTING</span>
+              <a href="#contact" class="card-link-title">INQUIRE NOW &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 6: WELCOME SECTION WITH IMPORTED WEDKRAFT MEDIA -->
+  <section id="welcome" class="section-block welcome-section green-bg scroll-reveal">
+    <div class="container split-layout">
+      <div class="welcome-text-side">
+        <h2 class="calligraphy-heading">WedKraft</h2>
+        <span class="est-tag">EVENT & PRODUCTION HOUSE</span>
+        <div class="gold-diamond-icon">❖</div>
+        <h3 class="welcome-subheading">
+          Your premier partner for grand wedding concepts and seamless event management.
+        </h3>
+        <p class="welcome-text">
+          Whether you require a cinematic Varmala setup, cold pyro fireworks, tent house management, or full-scale concert production, WedKraft Event & Production House delivers excellence across every milestone.
+        </p>
+        <a href="#contact" class="btn-link-gold">DISCOVER PRODUCTION SERVICES &rarr;</a>
+      </div>
+
+      <div class="welcome-image-side">
+        <div class="bw-image-frame">
+          <img src="/wedkraft_sangeet_lighting.jpg" alt="WedKraft Live Concert Stage Setup" class="bw-photo" />
+          <div class="gold-corner-accent top-left"></div>
+          <div class="gold-corner-accent bottom-right"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 7: KIND WORDS / TESTIMONIALS -->
+  <section id="kind-words" class="section-block testimonials-section ivory-bg scroll-reveal">
+    <div class="container text-center">
+      <h2 class="calligraphy-heading dark-calligraphy">Kind Words</h2>
+      <p class="section-sub-tag">CLIENT REVIEWS FOR @WEDKRAFTEVENT</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="client-img-frame">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" alt="Vikram and Meera" />
+          </div>
+          <h4 class="couple-name">VIKRAM & MEERA</h4>
+          <p class="wedding-location">GRAND VARMALA & WEDDING</p>
+          <p class="quote-text">
+            "The 360° rotating stage and cold pyro entry created by WedKraft Event & Production House took everyone's breath away! Highly recommended for grand weddings."
+          </p>
+          <span class="rating-stars">★★★★★</span>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="client-img-frame">
+            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=600&q=80" alt="Aditya and Ananya" />
+          </div>
+          <h4 class="couple-name">ADITYA & ANANYA</h4>
+          <p class="wedding-location">DESTINATION SANGEET & RECEPTION</p>
+          <p class="quote-text">
+            "WedKraft (@wedkraftevent) delivered concert-level lighting, heavy fog, and flawless flower shower effects. They made our special day magical!"
+          </p>
+          <span class="rating-stars">★★★★★</span>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="client-img-frame">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" alt="Rahul and Riya" />
+          </div>
+          <h4 class="couple-name">RAHUL & RIYA</h4>
+          <p class="wedding-location">HALDI & PRE-WEDDING GALAS</p>
+          <p class="quote-text">
+            "Every single detail from decor to cold pyros was handled with speed and professionalism. Thank you WedKraft team!"
+          </p>
+          <span class="rating-stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 8: GET IN TOUCH & FULL CONTACT FORM -->
+  <section id="contact" class="section-block contact-section ivory-bg scroll-reveal">
+    <div class="container text-center">
+      <h2 class="calligraphy-heading dark-calligraphy huge-title">GET IN TOUCH</h2>
+      <p class="contact-lead-text">
+        Let’s curate an unforgettable experience. Complete the inquiry form below to connect directly with the master strategists at WedKraft Event & Production House (@wedkraftevent).
+      </p>
+
+      <!-- Full Luxury Contact Form Card -->
+      <div class="full-contact-form-wrapper glass-card-dark text-left">
+        <div class="form-header text-center">
+          <span class="form-badge"><i data-lucide="sparkles"></i> WedKraft Booking Concierge</span>
+          <h3>Private Event & Varmala Booking Request</h3>
+          <p>Tell us about your upcoming celebration or production requirements.</p>
+        </div>
+
+        <form id="page-contact-form" class="main-contact-form">
+          <div class="form-grid-row">
+            <div class="form-field">
+              <label for="contact-name">Full Name *</label>
+              <div class="field-input-wrapper">
+                <i data-lucide="user" class="field-icon"></i>
+                <input type="text" id="contact-name" placeholder="e.g. Maharani & Vikram" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="contact-main-email">Email Address *</label>
+              <div class="field-input-wrapper">
+                <i data-lucide="mail" class="field-icon"></i>
+                <input type="email" id="contact-main-email" placeholder="yourname@gmail.com" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid-row">
+            <div class="form-field">
+              <label for="contact-social">Instagram Handle / Social Contact</label>
+              <div class="field-input-wrapper">
+                <svg class="field-icon insta-svg-inline" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <input type="text" id="contact-social" placeholder="@yourhandle" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="contact-service">Service / Concept Required *</label>
+              <div class="field-input-wrapper">
+                <i data-lucide="sparkles" class="field-icon"></i>
+                <select id="contact-service" required>
+                  <option value="" disabled selected>Select Production Service</option>
+                  <option value="varmala">Grand Varmala & 360° Rotating Stage</option>
+                  <option value="cold-pyros">Cold Pyro Fireworks & Heavy Fog Entry</option>
+                  <option value="wedding">Full Royal Wedding Production</option>
+                  <option value="sangeet">Sangeet Concert Lighting & Laser Show</option>
+                  <option value="haldi">Haldi & Pre-Wedding Gala Setup</option>
+                  <option value="corporate">Corporate & Milestone Celebration</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid-row">
+            <div class="form-field">
+              <label for="contact-date">Tentative Event Date</label>
+              <div class="field-input-wrapper">
+                <i data-lucide="calendar" class="field-icon"></i>
+                <input type="date" id="contact-date" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="contact-location">Event City / Destination</label>
+              <div class="field-input-wrapper">
+                <i data-lucide="map-pin" class="field-icon"></i>
+                <input type="text" id="contact-location" placeholder="e.g. Udaipur, Goa, Jaipur, Dubai..." />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-message">Vision / Special Production Notes</label>
+            <div class="field-input-wrapper textarea-wrapper">
+              <textarea id="contact-message" rows="4" placeholder="Describe your dream theme, stage layout, entry concepts, or special fireworks requirements..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-gold-royal btn-full btn-lg">
+            <span>SEND PRIVATE BOOKING REQUEST</span>
+            <i data-lucide="send"></i>
+          </button>
+        </form>
+
+        <div id="contact-feedback" class="form-feedback-box hidden"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 9: INSTAGRAM FEED GALLERY (@wedkraftevent) -->
+  <section id="instagram-section" class="section-block insta-section green-bg scroll-reveal">
+    <div class="container text-center">
+      <p class="insta-subtext">OFFICIAL INSTAGRAM GALLERY</p>
+      <h3 class="insta-handle-title">
+        <a href="https://instagram.com/wedkraftevent" target="_blank" rel="noopener">
+          <svg class="insta-svg-title" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          @wedkraftevent
+        </a>
+      </h3>
+
+      <div class="insta-grid">
+        <a href="https://instagram.com/wedkraftevent" target="_blank" class="insta-card">
+          <img src="/wedkraft_varmala_pyro.jpg" alt="WedKraft Varmala Pyro Post" />
+          <div class="insta-overlay">
+            <svg class="insta-svg-inline" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>@wedkraftevent</span>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/wedkraftevent" target="_blank" class="insta-card">
+          <img src="/wedkraft_mandap_stage.jpg" alt="WedKraft Mandap Post" />
+          <div class="insta-overlay">
+            <svg class="insta-svg-inline" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>@wedkraftevent</span>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/wedkraftevent" target="_blank" class="insta-card">
+          <img src="/wedkraft_sangeet_lighting.jpg" alt="WedKraft Sangeet Post" />
+          <div class="insta-overlay">
+            <svg class="insta-svg-inline" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>@wedkraftevent</span>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/wedkraftevent" target="_blank" class="insta-card">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="WedKraft Event Instagram Post" />
+          <div class="insta-overlay">
+            <svg class="insta-svg-inline" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>@wedkraftevent</span>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/wedkraftevent" target="_blank" class="insta-card">
+          <img src="/wedkraft_varmala_pyro.jpg" alt="WedKraft Varmala Post" />
+          <div class="insta-overlay">
+            <svg class="insta-svg-inline" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>@wedkraftevent</span>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/wedkraftevent" target="_blank" class="insta-card">
+          <img src="/wedkraft_mandap_stage.jpg" alt="WedKraft Stage Post" />
+          <div class="insta-overlay">
+            <svg class="insta-svg-inline" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>@wedkraftevent</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer green-bg">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-heading">Get In Touch</h4>
+        <p class="email-address"><a href="mailto:wedkraftevent@gmail.com">wedkraftevent@gmail.com</a></p>
+        <p class="footer-note">
+          WedKraft Event & Production House (@wedkraftevent) - Specializing in grand Varmala entry concepts, cold pyros, sound, lighting & event management.
+        </p>
+      </div>
+
+      <div class="footer-col text-center">
+        <h4 class="footer-heading">Quick Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#reels-section">Instagram Reels</a></li>
+          <li><a href="#varmala-section">Varmala Concepts</a></li>
+          <li><a href="#featured">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col text-right">
+        <h4 class="footer-heading">Follow Instagram</h4>
+        <p class="insta-link-footer">
+          <a href="https://instagram.com/wedkraftevent" target="_blank" rel="noopener">
+            <svg class="insta-svg-inline" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            @wedkraftevent
+          </a>
+        </p>
+        <div class="footer-social-icons">
+          <a href="https://instagram.com/wedkraftevent" target="_blank" class="insta-social-btn" title="Instagram">
+            <svg class="insta-svg-logo" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://instagram.com/wedkraftevent" target="_blank" title="Instagram Direct">
+            <i data-lucide="message-circle"></i>
+          </a>
+          <a href="mailto:wedkraftevent@gmail.com" title="Email Us">
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      <p>© 2026 WEDKRAFT EVENT & PRODUCTION HOUSE (@WEDKRAFTEVENT). ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+
+
+  <!-- Direct Inquiry Modal Drawer -->
+  <div id="planner-modal" class="modal-backdrop hidden">
+    <div class="modal-card glass-panel">
+      <button id="close-modal-btn" class="close-btn">&times;</button>
+      <div class="modal-header">
+        <span class="modal-badge"><i data-lucide="sparkles"></i> WedKraft Booking Concierge</span>
+        <h2>Plan Your Celebration</h2>
+        <p>Book WedKraft Event & Production House (@wedkraftevent)</p>
+      </div>
+      <form id="inquiry-form" class="modal-form">
+        <div class="form-row">
+          <div class="field-container">
+            <label for="client-name">Your Full Name</label>
+            <input type="text" id="client-name" placeholder="e.g. Maharani & Vikram" required />
+          </div>
+          <div class="field-container">
+            <label for="client-handle">Instagram Handle / Email</label>
+            <input type="text" id="client-handle" placeholder="@yourhandle or email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field-container">
+            <label for="event-date">Tentative Date</label>
+            <input type="date" id="event-date" />
+          </div>
+          <div class="field-container">
+            <label for="guest-count">Services Required</label>
+            <select id="guest-count">
+              <option value="varmala">Grand Varmala & Cold Pyros</option>
+              <option value="wedding">Full Wedding Production</option>
+              <option value="sangeet">Sangeet Concert & Lighting</option>
+              <option value="haldi">Haldi / Pre-Wedding Gala</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-container">
+          <label for="event-details">Vision / Requirements</label>
+          <textarea id="event-details" rows="3" placeholder="Describe your Varmala theme, venue location, or special effects desired..."></textarea>
+        </div>
+        <button type="submit" class="btn-gold-royal btn-full">
+          <span>Submit Inquiry to @wedkraftevent</span>
+          <i data-lucide="send"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
